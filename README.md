@@ -1,36 +1,146 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧠 Memorization Trainer
 
-## Getting Started
+A modern **memory training web app** that helps users improve recall by typing or speaking from memory. Built with **Next.js, React, and Web Speech API**, this app simulates real memorization practice with accuracy scoring and interactive feedback.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Features
+
+* 📝 **Custom Paragraph Input**
+  Paste any text you want to memorize.
+
+* 👀 **Preview Mode (Countdown)**
+  Study the paragraph before it disappears.
+
+* ✍️ **Typing Recall**
+  Type what you remember with real-time feedback.
+
+* 🎤 **Speech Recognition**
+  Speak instead of typing using browser speech-to-text.
+
+* 🔒 **Strict Mode**
+  Prevents incorrect words while typing.
+
+* 📊 **Accuracy Scoring**
+  Calculates how accurate your recall is.
+
+* 📈 **Progress Indicator**
+  Visual progress bar while typing.
+
+---
+
+## 🧠 How It Works
+
+### 1. Setup
+
+* User inputs a paragraph.
+* Optionally enables **Strict Mode**.
+
+### 2. Preview
+
+* Paragraph is shown for a few seconds.
+* Countdown prepares the user for recall.
+
+### 3. Recall (Typing / Speaking)
+
+* User types or speaks from memory.
+* Words are checked in real-time.
+
+### 4. Result
+
+* Accuracy is calculated based on correct words.
+* User can restart and try again.
+
+---
+
+## 📊 Accuracy Logic
+
+Accuracy is calculated using:
+
+```
+Accuracy = (Correct Words in Correct Position / Total Words) × 100
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* Words are **cleaned** (lowercase, no punctuation).
+* Matching is **position-based**.
+* Extra words are ignored.
+* Missing or incorrect words reduce the score.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Planned Improvements
 
-## Learn More
+### 🔤 Smarter Accuracy
 
-To learn more about Next.js, take a look at the following resources:
+* Typo tolerance (Levenshtein distance)
+* Partial scoring per word
+* Phrase-based matching
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🔄 Learning Enhancements
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* Spaced repetition system
+* Memory strength feedback
+* Mistake tracking
 
-## Deploy on Vercel
+### 🎮 Gamification
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Difficulty levels (Easy / Medium / Hard)
+* Speed-based scoring
+* Streaks and XP system
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 🎤 Speech Improvements
+
+* Better speech-to-text accuracy
+* Phonetic matching
+
+---
+
+## 🛠️ Tech Stack
+
+* ⚛️ React / Next.js
+* 🎨 Tailwind CSS
+* 🎤 Web Speech API
+* 🧠 Custom Hooks (Speech Recognition)
+
+---
+
+## 📦 Installation
+
+```bash
+npm install
+npm run dev
+```
+
+---
+
+## ⚠️ Notes
+
+* Speech recognition works best in **Chrome-based browsers**.
+* Some browsers may not support the Web Speech API.
+* Minor vulnerabilities from npm are normal — run:
+
+```bash
+npm audit fix
+```
+
+---
+
+## 💡 Future Vision
+
+This project aims to evolve into a **full learning system**, similar to:
+
+* 🧠 Spaced repetition apps (like Anki)
+* 📚 Study tools for students
+* 🎯 Memory training platforms
+
+---
+
+## 👤 Author
+
+Developed by **Janna Fiel de Guzman**
+
+---
+
+## ⭐ Contribute
+
+Feel free to fork, improve, and suggest features!
